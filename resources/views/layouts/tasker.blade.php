@@ -19,21 +19,21 @@
             </button>
         
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="navbar-nav mr-auto">
+              <div class="navbar-nav mr-auto me-auto">
                 <a href="{{route('projects.index')}}" class="{{ (request()->routeIs('projects.index')) ? 'nav-link active' : 'nav-link' }}">Projects</a>
                 <a class="nav-link" href="#">Coming soon</a>
             </div>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="form-inline d-flex my-2 my-lg-0">
+                <input class="form-control mr-sm-2 me-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
     </div>
       </nav>
-    <div class="container">
+    <div class="container my-3">
         @yield('content')
     </div>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> --}}
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   </body>
 </html>

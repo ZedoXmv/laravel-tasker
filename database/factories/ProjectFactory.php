@@ -28,7 +28,7 @@ class ProjectFactory extends Factory
         $status = ['pending','ongoing','completed','cancelled'];
         return [
             'title' => $this->faker->sentence(5),
-            'details' => $this->faker->paragraph(5),
+            'details' => $this->faker->paragraphs(5,true),
             'status' =>$status[rand(0,3)],
             'start_date' =>$start->addDays(rand(1,5)),
             'end_date' =>$end->addDays(rand(55,99)),
