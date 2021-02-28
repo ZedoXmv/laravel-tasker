@@ -19,6 +19,22 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::with('ProjectManager')->paginate();
+        foreach ($projects as $project) {
+            switch ($project->status) {
+                case 'pending':
+                    $project->color = 'primary';
+                    break;
+                case 'ongoing':
+                    $project->color = 'warning';
+                    break;
+                case 'completed':
+                    $project->color = 'success';
+                    break;
+                case 'cancelled':
+                    $project->color = 'danger';
+                    break;
+            }
+        }
         return view('projects.index')->with('projects',$projects);
     }
 

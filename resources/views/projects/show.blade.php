@@ -36,7 +36,8 @@
                 <strong>Days Remaining:</strong>
                 <div>{{$project->remaining_days}}</div>                
               @else
-                <div>{{abs($project->remaining_days)}} <strong>Days Overdue</strong></div>                
+                <strong>Days Overdue:</strong>
+                <div>{{abs($project->remaining_days)}}</div>                
               @endif
             @endif
           </div>

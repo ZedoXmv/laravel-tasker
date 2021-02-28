@@ -34,30 +34,7 @@
 
       <tbody>
         @foreach ($projects as $project)
-        @switch($project->status)
-        @case('pending')
-        <tr class="table-primary" onclick="window.location='{{route('projects.show',$project->id)}}'"
-          style="cursor: pointer">
-          @break
-          @case('ongoing')
-        <tr class="table-warning" onclick="window.location='{{route('projects.show',$project->id)}}'"
-          style="cursor: pointer">
-
-          @break
-          @case('completed')
-        <tr class="table-success" onclick="window.location='{{route('projects.show',$project->id)}}'"
-          style="cursor: pointer">
-
-          @break
-          @case('cancelled')
-        <tr class="table-danger" onclick="window.location='{{route('projects.show',$project->id)}}'"
-          style="cursor: pointer">
-
-          @break
-          @default
-
-        <tr onclick="window.location='{{route('projects.show',$project->id)}}'" style="cursor: pointer">
-          @endswitch
+        <tr class="table-{{$project->color}}" onclick="window.location='{{route('projects.show',$project->id)}}'">
           <th>{{$project->id}}</th>
           {{-- <td>{{$project->status}}</td> --}}
           <td>{{$project->title}}</td>
